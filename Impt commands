@@ -1,0 +1,12 @@
+
+export OPENCV_ARM_DIR=/home/qinghui/Projects/SemanticSegmentationEmbeddedSystem/opencv/build/install
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$OPENCV_ARM_DIR/lib
+export C_INCLUDE_PATH=$C_INCLUDE_PATH:$OPENCV_ARM_DIR/include
+export CPLUS_INCLUDE_PATH=$CPLUS_INCLUDE_PATH:/$OPENCV_ARM_DIR/include
+
+
+arm-linux-gnueabihf-g++ testcv.cpp -L /home/qinghui/Projects/SemanticSegmentationEmbeddedSystem/opencv/build/install/lib -lopencv_core -lopencv_imgproc -lopencv_highgui -lopencv_imgcodecs -lopencv_videoio -o test
+
+
+arm-linux-gnueabihf-g++ -o test -L /home/qinghui/Projects/SemanticSegmentationEmbeddedSystem/opencv/build/install/lib -lopencv_core -lopencv_imgproc -lopencv_highgui -lopencv_imgcodecs -lopencv_videoio -fopenmp -pthread sn.cpp /home/qinghui/Projects/SemanticSegmentationEmbeddedSystem/squeeznet/ncnn/lib/libncnn.a 
+
